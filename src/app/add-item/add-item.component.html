@@ -1,0 +1,13 @@
+<form class="from-holder" (ngSubmit)="addItem(); addForm.reset()" [formGroup]="addForm">
+
+  <validate-field [inputField]="addForm.get('content')"
+                  [inputErrors]="addForm.get('content').errors" [errorDefs]="validationMessages">
+
+    <div class="form-group">
+      <input class="input-group" type="text" placeholder="Write here" formControlName="content">
+      <input class="input-group" type="submit" value="+" [disabled]="!addForm.valid">
+    </div>
+
+  </validate-field>
+
+</form>
