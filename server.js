@@ -22,13 +22,14 @@ app.post('/api/items/', (req, res) => {
   if (!request.content) {
     res.status(400).send({'error': 'Content is required'})
   }
+
+  let items = jsonfile.readFileSync(file);
+
   let obj = {
-    id: items.length + 1,
+    id: items[items.length - 1].id + 1,
     content: request.content,
     status: false
   };
-
-  let items = jsonfile.readFileSync(file);
 
   items.push(obj);
   jsonfile.writeFileSync(file, items, {spaces: 2});
