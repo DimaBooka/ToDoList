@@ -1,1 +1,8 @@
-@import '../common-usage/form-styles.scss';
+@import '../common-usage/common-styles.scss';
+
+.list-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 3 2 100%;
+}

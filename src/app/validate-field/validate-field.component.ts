@@ -3,16 +3,13 @@ import {Component, Input } from '@angular/core';
 @Component({
   selector: 'validate-field',
   templateUrl: './validate-field.component.html',
-  styleUrls: ['./validate-field.component.css']
+  styleUrls: ['./validate-field.component.scss']
 })
 export class ValidateFieldComponent {
 
-  @Input()
-  inputErrors: any;
-  @Input()
-  inputField: any;
-  @Input()
-  errorDefs: any;
+  @Input() inputErrors: any;
+  @Input() inputField: any;
+  @Input() errorDefs: any;
 
   errorMessage: string = '';
 

@@ -11,7 +11,7 @@ import { SubjectItemsService } from '../common-usage/services/subjectItems';
 })
 export class ListItemsComponent implements OnInit, OnDestroy {
 
-  items: ItemList[];
+  items: ItemList[] = [];
   subscription: Subscription;
   serverError: string;
 
