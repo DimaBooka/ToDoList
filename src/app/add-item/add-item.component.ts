@@ -1,10 +1,10 @@
-import {Component, OnInit } from '@angular/core';
-import { Item } from '../common-usage/models/item.model';
+import { Component, OnInit } from '@angular/core';
+import { ItemCreate } from '../common-usage/models/item.model';
 import { ItemsService } from '../common-usage/services/items.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validationMessages } from '../common-usage/validation-messages';
 import { customMaxLengthValidator } from '../common-usage/validators';
-
+import { SubjectItemsService } from '../common-usage/services/subjectItems';
 
 @Component({
   selector: 'add-item',
@@ -14,18 +14,24 @@ import { customMaxLengthValidator } from '../common-usage/validators';
 export class AddItemComponent implements OnInit {
 
   validationMessages = validationMessages;
-  addForm: FormGroup;
+  createForm: FormGroup;
+  serverError: string;
 
-  constructor(private itemsService: ItemsService, private fb: FormBuilder) { }
+  constructor(private itemsService: ItemsService,
+              private fb: FormBuilder,
+              private subjectItems: SubjectItemsService) { }
 
   ngOnInit() {
-    this.addForm = this.fb.group({
-      content: ['', [Validators.required, customMaxLengthValidator(20)]],
+    this.createForm = this.fb.group({
+      content: ['', [Validators.required, customMaxLengthValidator(30)]],
     });
   }
 
   addItem() {
-    this.itemsService.addItem(new Item(this.addForm.get('content').value));
+    this.serverError = '';
+    this.itemsService.createItem(new ItemCreate(this.createForm.get('content').value))
+      .subscribe(resp => this.subjectItems.refreshItems(),
+                 error => this.serverError = error);
   }
 
 }

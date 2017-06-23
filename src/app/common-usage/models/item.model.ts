@@ -1,5 +1,13 @@
-export class Item {
+export class ItemList {
   constructor(
-    public content: string
+    public id: number,
+    public content: string,
+    public status: boolean
+  ) {}
+}
+
+export class ItemCreate {
+  constructor(
+    public content: string,
   ) {}
 }

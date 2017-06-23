@@ -1,13 +1,15 @@
-<form class="from-holder" (ngSubmit)="addItem(); addForm.reset()" [formGroup]="addForm">
+<form class="from-holder" (ngSubmit)="addItem(); createForm.reset()" [formGroup]="createForm">
 
-  <validate-field [inputField]="addForm.get('content')"
-                  [inputErrors]="addForm.get('content').errors" [errorDefs]="validationMessages">
+  <validate-field [inputField]="createForm.get('content')"
+                  [inputErrors]="createForm.get('content').errors" [errorDefs]="validationMessages">
 
     <div class="form-group">
       <input class="input-group" type="text" placeholder="Write here" formControlName="content">
-      <input class="input-group" type="submit" value="+" [disabled]="!addForm.valid">
+      <input class="input-group" type="submit" value="+" [disabled]="!createForm.valid">
     </div>
 
   </validate-field>
+
+  <span *ngIf="serverError">{{ serverError }}</span>
 
 </form>

@@ -1,6 +1,8 @@
 <ul>
-  <li *ngFor="let item of items; let i = index">
-    {{ i + 1 }} - {{ item.content }}
-    <button (click)="removeItem(i)">x</button>
+  <span *ngIf="serverError">{{ serverError }}</span>
+  <li *ngFor="let item of items">
+    <input type="checkbox" (change)="updateItemInfo(item)" [checked]="item.status">
+    {{ item.content }}
+    <button (click)="removeItem(item.id)">x</button>
   </li>
 </ul>
