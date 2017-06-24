@@ -8,7 +8,7 @@ After git clone firstly run `npm i` for installing dependencies local.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `node server.js` for a simple backend-plug server. Navigate to `http://localhost:8080/`.
+If you want to test with local backend-plug server run `node server.js` and change the `API_PATH` to `http://localhost:8080/api/items` in `src/app/common-usage/constants.ts` file.
 
 ## Deploy
 
