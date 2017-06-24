@@ -22,13 +22,10 @@
   white-space: nowrap;
 }
 
-.input-group-text:focus {
-  background: white;
-}
-
 .input-group-submit {
   border-radius: 0 2px 2px 0;
   background: rgba(159, 226, 38, 0.75);
+  -webkit-appearance: none;
   i {
     font-size: 14px;
   }
