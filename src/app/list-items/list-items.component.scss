@@ -52,7 +52,9 @@
   background: rgba(255, 22, 0, 0.86);
   -webkit-appearance: none;
   cursor: pointer;
-
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
   i {
     font-size: 14px;
   }
@@ -68,6 +70,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .has-error {
