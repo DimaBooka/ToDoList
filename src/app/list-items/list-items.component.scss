@@ -1,8 +1,88 @@
 @import '../common-usage/common-styles.scss';
 
 .list-items {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 3 2 100%;
+  padding: 0;
+  & li {
+    display: flex;
+  }
+
+  li:first-child{
+    & .input-checkbox {
+      border-radius: 2px 0 0 0;
+    }
+
+    & .remove-button {
+      border-radius: 0 2px 0 0;
+    }
+  }
+
+  li:last-child {
+    & .input-checkbox {
+      border-radius: 0 0 0 2px;
+    }
+
+    & .remove-button {
+      border-radius: 0 0 2px 0;
+    }
+  }
+}
+
+.item-text,
+.remove-button,
+.input-checkbox {
+  padding: 8px 15px;
+  border: none;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.item-text {
+  background: rgba(230, 228, 228, 0.75);
+  min-width: 205px;
+  max-width: 205px;
+  word-break: break-all;
+  text-align: center;
+}
+
+.remove-button {
+  background: rgba(255, 22, 0, 0.86);
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  i {
+    font-size: 14px;
+  }
+}
+
+.line-across {
+  text-decoration: line-through;
+  color: rgb(117, 117, 115);
+}
+
+.input-checkbox {
+  background: rgba(159, 226, 38, 0.7);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.has-error {
+  padding-bottom: 15px;
+  color: rgba(230, 24, 24, 0.84);
+}
+
+@media screen and (max-width: 374px)  {
+  .item-text {
+    min-width: 113px;
+    max-width: 113px;
+  }
+
+  .has-error {
+    width: 230px;
+    text-align: center;
+  }
 }

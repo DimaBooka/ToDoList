@@ -1,4 +1,4 @@
-<form class="from-holder" (ngSubmit)="addItem(); createForm.reset()" [formGroup]="createForm">
+<form class="form-holder" (ngSubmit)="addItem(); createForm.reset()" [formGroup]="createForm">
 
   <validate-field [inputField]="createForm.get('content')"
                   [inputErrors]="createForm.get('content').errors" [errorDefs]="validationMessages">

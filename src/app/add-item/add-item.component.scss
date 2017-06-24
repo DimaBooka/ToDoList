@@ -4,7 +4,7 @@
 
 .input-group-text,
 .input-group-submit {
-  padding: .35em .75em;
+  padding: 8px 15px;
   border: none;
   font-size: 1.1rem;
   text-decoration: none;
@@ -12,6 +12,12 @@
 
 .form-group {
   display: flex;
+}
+
+.form-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-group-text {
@@ -26,6 +32,8 @@
   border-radius: 0 2px 2px 0;
   background: rgba(159, 226, 38, 0.75);
   -webkit-appearance: none;
+  cursor: pointer;
+
   i {
     font-size: 14px;
   }
@@ -35,8 +43,18 @@
   }
 }
 
+.has-error {
+  padding-top: 15px;
+  color: rgba(230, 24, 24, 0.84);
+}
+
 @media screen and (max-width: 374px)  {
   .input-group-text {
     width: 150px;
+  }
+
+  .has-error {
+    width: 230px;
+    text-align: center;
   }
 }

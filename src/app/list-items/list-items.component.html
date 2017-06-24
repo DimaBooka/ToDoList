@@ -1,8 +1,11 @@
 <ul class="list-items" *ngIf="items.length > 0">
   <span class="has-error" *ngIf="serverError">{{ serverError }}</span>
   <li *ngFor="let item of items">
-    <input type="checkbox" (change)="updateItemInfo(item)" [checked]="item.status">
-    <span>{{ item.content }}</span>
-    <button (click)="removeItem(item.id)">x</button>
+    <label class="input-checkbox">
+      <input type="checkbox" (change)="updateItemInfo(item)" [checked]="item.status">
+    </label>
+    <span class="item-text" [ngClass]="{'line-across': item.status}">{{ item.content }}</span>
+    <button class="remove-button" (click)="removeItem(item.id)"><i class="fa fa-times"></i></button>
+
   </li>
 </ul>
