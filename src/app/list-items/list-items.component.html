@@ -1,5 +1,5 @@
 <ul class="list-items" *ngIf="items.length > 0">
-  <span *ngIf="serverError">{{ serverError }}</span>
+  <span class="has-error" *ngIf="serverError">{{ serverError }}</span>
   <li *ngFor="let item of items">
     <input type="checkbox" (change)="updateItemInfo(item)" [checked]="item.status">
     <span>{{ item.content }}</span>

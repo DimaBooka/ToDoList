@@ -1,1 +1,45 @@
 @import '../common-usage/common-styles.scss';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+.input-group-text,
+.input-group-submit {
+  padding: .35em .75em;
+  border: none;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.form-group {
+  display: flex;
+}
+
+.input-group-text {
+  border-radius: 2px 0 0 2px;
+  background: rgba(230, 228, 228, 0.75);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.input-group-text:focus {
+  background: white;
+}
+
+.input-group-submit {
+  border-radius: 0 2px 2px 0;
+  background: rgba(159, 226, 38, 0.75);
+  i {
+    font-size: 14px;
+  }
+
+  &:disabled {
+    background: rgba(128, 128, 128, 0.4);;
+  }
+}
+
+@media screen and (max-width: 374px)  {
+  .input-group-text {
+    width: 150px;
+  }
+}

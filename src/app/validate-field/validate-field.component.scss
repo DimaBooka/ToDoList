@@ -1,1 +1,19 @@
 @import '../common-usage/common-styles.scss';
+
+.form-validator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-validator .help-block {
+  padding: 10px 0;
+  color: rgba(230, 24, 24, 0.84);
+}
+
+@media screen and (max-width: 374px)  {
+  .help-block {
+    width: 230px;
+    text-align: center;
+  }
+}

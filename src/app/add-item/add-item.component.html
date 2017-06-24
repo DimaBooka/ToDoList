@@ -2,14 +2,16 @@
 
   <validate-field [inputField]="createForm.get('content')"
                   [inputErrors]="createForm.get('content').errors" [errorDefs]="validationMessages">
-
     <div class="form-group">
-      <input class="input-group" type="text" placeholder="Write here" formControlName="content">
-      <input class="input-group" type="submit" value="+" [disabled]="!createForm.valid">
-    </div>
 
+      <input class="input-group-text" type="text" placeholder="Write here" formControlName="content">
+      <button type="submit" class="input-group-submit" [disabled]="!createForm.valid">
+        <i class="fa fa-plus"></i>
+      </button>
+
+    </div>
   </validate-field>
 
-  <span *ngIf="serverError">{{ serverError }}</span>
+  <span class="has-error" *ngIf="serverError">{{ serverError }}</span>
 
 </form>
