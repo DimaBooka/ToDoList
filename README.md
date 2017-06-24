@@ -4,7 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+After git clone firstly run `npm i` for installing dependencies local.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `node server.js` for a simple backend-plug server. Navigate to `http://localhost:8080/`.
+
+## Deploy
+
+Be sure that you have setup the heroku (look documentation on site). Run `npm start deploy`.
 
 ## Code scaffolding
 
